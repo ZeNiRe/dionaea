@@ -160,7 +160,7 @@ class LogJsonHandler(ihandler):
                 logger.warning("Incident '%s' with unknown data type '%s' for key '%s'", icd.origin, type(v), k)
 
         data = {
-            "timestamp": datetime.utcnow().isoformat(),
+            "timestamp": str(datetime.utcnow().isoformat()) + 'Z',
             "name": "dionaea",
             "origin": icd.origin,
             "data": idata
